@@ -22,9 +22,9 @@ const hideLoadingSpinner = () => {
 // Get quote from API
 const getQuote = async () => {
   showLoadingSpinner();
-  const proxyUrl = "http://cors.sayanmukherjee.com:8090/";
+  const proxyUrl = "https://cors-anywhere.herokuapp.com/";
   const apiUrl =
-    "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json";
+    "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json";
 
   try {
     const res = await fetch(proxyUrl + apiUrl);
