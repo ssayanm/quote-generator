@@ -44,9 +44,40 @@ body {
   }
 }
 
+.button-container {
+  margin-top: $large;
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    cursor: pointer;
+    font-size: $smallest;
+    height: $medium;
+    border: none;
+    border-radius: $small;
+    color: $light-color;
+    background-color: $dark-color;
+    outline: none;
+    padding: 0.5rem 1.8rem;
+    box-shadow: 0 0.3rem rgba(121, 121, 121, 0.5);
+    &:hover {
+      filter: brightness(110%);
+    }
+    &:active {
+      transform: translate(0, 0.3rem);
+      box-shadow: 0 0.1rem $light-color;
+    }
+  }
+  .twitter-button {
+    &:hover {
+      color: #38a1f3;
+    }
+  }
+}
+
 // Media Queries
 @media screen and (max-width: 1000px) {
   .quote-container {
-    margin: auto 10px;
+    margin: auto 3rem;
   }
 }
