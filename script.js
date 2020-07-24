@@ -13,13 +13,16 @@ const showLoadingSpinner = () => {
 
 // Hide Loading spinner
 const hideLoadingSpinner = () => {
-  !loader.hidden ? (quoteContainer = false) : (loader.hidden = true);
+  if (!loader.hidden) {
+    quoteContainer.hidden = false;
+    loader.hidden = true;
+  }
 };
 
 // Get quote from API
 const getQuote = async () => {
   showLoadingSpinner();
-  const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+  const proxyUrl = "http://cors.sayanmukherjee.com:8090/";
   const apiUrl =
     "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json";
 
@@ -39,6 +42,7 @@ const getQuote = async () => {
 
     quoteText.innerText = data.quoteText;
     //stop loader show code
+    // complete();
     hideLoadingSpinner();
   } catch (error) {
     console.log(error);
